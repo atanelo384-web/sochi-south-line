@@ -1,0 +1,207 @@
+&lt;!doctype html&gt;
+&lt;html lang="ru"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;meta name="theme-color" content="#f7f5f0"&gt;
+  &lt;meta name="description" content="Сочи — город, где утро начинается у моря, а вечер заканчивается в горах. Небольшой путеводитель по южному маршруту."&gt;
+  &lt;title&gt;Сочи — южная линия&lt;/title&gt;
+  &lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+  &lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
+  &lt;link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet"&gt;
+  &lt;style&gt;
+    :root { --paper:#f7f5f0; --ink:#202321; --muted:#777974; --red:#c6382d; --line:#dedbd4; --serif:'Playfair Display', Georgia, serif; --sans:'DM Sans', Arial, sans-serif; }
+ * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); -webkit-font-smoothing:antialiased; }
+    a { color:inherit; text-decoration:none; }
+    .wrap { width:min(1240px, calc(100% - 96px)); margin:auto; }
+    .topbar { height:88px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); }
+    .brand { display:flex; align-items:center; gap:12px; font-size:12px; font-weight:700; letter-spacing:.15em; text-transform:uppercase; }
+    .brand-mark { width:30px; height:30px; display:grid; place-items:center; border:1px solid var(--red); border-radius:50%; color:var(--red); font-family:var(--serif); font-size:17px; font-weight:500; letter-spacing:0; }
+    .nav { display:flex; gap:38px; color:#62645f; font-size:12px; }
+    .nav a { transition:color .2s; }.nav a:hover { color:var(--red); }
+    .season { font-size:11px; color:var(--muted); letter-spacing:.04em; }
+    .hero { padding:66px 0 104px; }
+    .eyebrow { display:flex; align-items:center; gap:12px; color:var(--red); font-size:10px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; }
+    .eyebrow::before { content:''; width:26px; height:1px; background:var(--red); }
+    .hero-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:56px; align-items:center; margin-top:30px; }
+    h1 { margin:0; font:500 clamp(76px, 11vw, 150px)/.88 var(--serif); letter-spacing:-.075em; }
+    h1 span { display:block; color:var(--red); font-style:italic; font-weight:500; margin-left:58px; }
+    .hero-copy { margin:32px 0 0 5px; max-width:380px; color:#696b66; font-size:14px; line-height:1.8; }
+    .hero-link { display:inline-flex; align-items:center; gap:14px; margin:27px 0 0 5px; color:var(--ink); font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; }
+    .hero-link i { width:32px; height:32px; display:grid; place-items:center; border:1px solid #c8c4bc; border-radius:50%; color:var(--red); font-size:16px; font-style:normal; transition:.25s; }
+    .hero-link:hover i { background:var(--red); color:white; border-color:var(--red); transform:translateY(3px); }
+    .hero-photo { position:relative; height:min(560px, 52vw); min-height:390px; overflow:hidden; background:#c5d0d0; }
+    .hero-photo img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; filter:saturate(.78); }
+    .photo-label { position:absolute; right:0; bottom:0; padding:16px 20px; background:var(--paper); font-size:10px; letter-spacing:.1em; text-transform:uppercase; }
+    .photo-label span { color:var(--red); margin-right:8px; }
+    .hero-index { position:absolute; left:-28px; bottom:64px; writing-mode:vertical-rl; transform:rotate(180deg); color:#888982; font-size:9px; letter-spacing:.18em; }
+    .intro { border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:33px 0; display:grid; grid-template-columns:1fr 2fr 1fr; align-items:center; gap:32px; }
+    .intro-tag { color:var(--red); font-size:10px; font-weight:700; letter-spacing:.17em; text-transform:uppercase; }
+    .intro p { max-width:610px; margin:0; font:500 clamp(19px,2.4vw,28px)/1.4 var(--serif); }
+    .intro-side { text-align:right; color:var(--muted); font-size:10px; line-height:1.7; letter-spacing:.07em; text-transform:uppercase; }
+    .section { padding:112px 0; }
+    .section-head { display:flex; justify-content:space-between; align-items:end; margin-bottom:42px; }
+    .section-head h2 { margin:14px 0 0; font:500 clamp(40px,6vw,68px)/1 var(--serif); letter-spacing:-.055em; }
+    .section-head p { max-width:260px; margin:0 0 3px; color:var(--muted); font-size:12px; line-height:1.7; }
+    .story-grid { display:grid; grid-template-columns:1.08fr .92fr; gap:28px; align-items:start; }
+    .story-main { position:relative; }
+    .story-main img { width:100%; height:530px; display:block; object-fit:cover; filter:saturate(.78); }
+    .image-caption { display:flex; justify-content:space-between; padding-top:13px; color:var(--muted); font-size:10px; letter-spacing:.08em; text-transform:uppercase; }
+    .story-aside { padding-top:82px; }
+    .story-aside img { width:100%; height:298px; display:block; object-fit:cover; filter:saturate(.76); }
+    .story-aside h3 { margin:24px 0 12px; font:500 32px/1.15 var(--serif); }
+    .story-aside p { max-width:390px; color:#73756f; font-size:13px; line-height:1.85; }
+    .number { color:var(--red); font-size:10px; letter-spacing:.15em; }
+    .route { background:#222725; color:#f7f5f0; padding:100px 0 104px; position:relative; overflow:hidden; }
+    .route::after { content:'43°35′'; position:absolute; right:-30px; bottom:-106px; color:rgba(255,255,255,.035); font:italic 260px var(--serif); pointer-events:none; }
+    .route .eyebrow { color:#e26b5f; }
+    .route .eyebrow::before { background:#e26b5f; }
+    .route-head { display:flex; justify-content:space-between; align-items:end; position:relative; z-index:1; }
+    .route h2 { margin:16px 0 0; font:500 clamp(42px,6vw,72px)/1 var(--serif); letter-spacing:-.05em; }
+    .route-lead { width:280px; margin:0 0 4px; color:#b9bdb7; font-size:12px; line-height:1.8; }
+    .stops { display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin-top:66px; border-top:1px solid #555b56; position:relative; z-index:1; }
+    .stop { padding:24px 26px 0 0; position:relative; }
+    .stop::before { content:''; position:absolute; width:7px; height:7px; top:-4px; left:0; background:#e26b5f; border-radius:50%; box-shadow:0 0 0 5px #222725; }
+    .stop small { display:block; color:#e26b5f; font-size:9px; letter-spacing:.16em; text-transform:uppercase; }
+    .stop h3 { margin:15px 0 9px; font:500 27px var(--serif); }
+    .stop p { max-width:290px; margin:0; color:#b9bdb7; font-size:11px; line-height:1.75; }
+    .stop .time { display:inline-block; margin-top:19px; color:#f7f5f0; font-size:10px; letter-spacing:.08em; }
+    .details { padding:102px 0; display:grid; grid-template-columns:1fr 1fr; gap:90px; align-items:center; }
+    .details img { width:100%; height:420px; object-fit:cover; display:block; filter:saturate(.75); }
+    .details-copy { max-width:450px; }
+    .details-copy h2 { margin:15px 0 20px; font:500 clamp(42px,5vw,62px)/1.05 var(--serif); letter-spacing:-.05em; }
+    .details-copy p { color:#73756f; font-size:13px; line-height:1.9; }
+    .fact-row { display:flex; gap:30px; padding-top:25px; margin-top:28px; border-top:1px solid var(--line); }
+    .fact strong { display:block; color:var(--red); font:500 27px var(--serif); }
+    .fact span { color:var(--muted); font-size:9px; letter-spacing:.1em; text-transform:uppercase; }
+    .closing { border-top:1px solid var(--line); padding:60px 0 28px; }
+    .closing-row { display:flex; justify-content:space-between; align-items:end; }
+    .closing h2 { margin:0; font:500 clamp(40px,6vw,72px)/1 var(--serif); letter-spacing:-.055em; }
+    .closing h2 em { color:var(--red); font-weight:500; }
+    .closing-note { max-width:220px; color:var(--muted); font-size:11px; line-height:1.7; }
+    footer { display:flex; justify-content:space-between; border-top:1px solid var(--line); margin-top:56px; padding-top:17px; color:#858780; font-size:9px; letter-spacing:.1em; text-transform:uppercase; }
+    .rail { position:fixed; z-index:8; top:10vh; bottom:10vh; right:27px; width:36px; pointer-events:none; opacity:.82; }
+    .rail::before,.rail::after { content:''; position:absolute; top:0; bottom:0; width:1px; background:rgba(198,56,45,.23); }
+    .rail::before { left:10px; }.rail::after { right:10px; }
+    .ties { position:absolute; inset:0; display:flex; flex-direction:column; justify-content:space-between; align-items:center; }
+    .ties i { width:26px; height:1px; background:rgba(198,56,45,.2); }
+    .train { width:44px; height:66px; position:fixed; z-index:9; right:23px; top:10vh; pointer-events:none; filter:drop-shadow(0 5px 6px rgba(45,28,25,.2)); will-change:top; }
+    .train svg { width:100%; height:100%; display:block; }
+    @media (max-width:850px) {
+      .wrap { width:calc(100% - 48px); }.topbar { height:72px; }.nav { gap:18px; }.season { display:none; }
+      .hero { padding:56px 0 72px; }.hero-grid { gap:30px; }.hero-photo { min-height:350px; }.hero-index { left:-18px; }
+      .story-main img { height:420px; }.story-aside { padding-top:56px; }.details { gap:45px; }
+      .rail { right:11px; }.train { right:7px; }
+    }
+    @media (max-width:620px) {
+      .wrap { width:calc(100% - 40px); }.brand { font-size:10px; }.brand-mark { width:27px;height:27px; }.nav { gap:14px;font-size:10px; }
+      .hero { padding:44px 0 58px; }.hero-grid { grid-template-columns:1fr; gap:34px; margin-top:24px; }.hero-copy { margin-top:22px; }.hero-photo { height:105vw; min-height:340px; max-height:510px; }.hero-index { display:none; }
+      .intro { grid-template-columns:1fr; gap:15px; padding:24px 0; }.intro-side { text-align:left; }.intro p { font-size:22px; }
+      .section { padding:76px 0; }.section-head { display:block; }.section-head p { margin-top:18px; }.story-grid { grid-template-columns:1fr; gap:36px; }.story-main img { height:110vw; max-height:470px; }.story-aside { padding-top:0; }.story-aside img { height:70vw; max-height:340px; }
+      .route { padding:76px 0; }.route-head { display:block; }.route-lead { margin-top:20px; }.stops { grid-template-columns:1fr; margin-top:42px; border-top:0; border-left:1px solid #555b56; margin-left:3px; }.stop { padding:0 0 32px 25px; }.stop::before { top:5px; left:-4px; }.stop h3 { margin-top:8px; }
+      .details { grid-template-columns:1fr; gap:35px; padding:76px 0; }.details img { height:75vw; max-height:390px; }.details-copy h2 { font-size:47px; }
+      .closing-row { display:block; }.closing-note { margin-top:22px; }.closing { padding-top:44px; }footer { margin-top:40px; font-size:8px; }.rail { right:3px; opacity:.48; }.train { right:-1px; transform:scale(.84); transform-origin:top right; }
+    }
+    @media (prefers-reduced-motion:reduce) { html{scroll-behavior:auto} *{transition:none!important} }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header class="wrap topbar"&gt;
+    &lt;a class="brand" href="#top" aria-label="Сочи, на главную"&gt;&lt;span class="brand-mark"&gt;Ю&lt;/span&gt; Южная линия&lt;/a&gt;
+    &lt;nav class="nav" aria-label="Главная навигация"&gt;&lt;a href="#about"&gt;О городе&lt;/a&gt;&lt;a href="#route"&gt;Маршрут&lt;/a&gt;&lt;a href="#season"&gt;Сезон&lt;/a&gt;&lt;/nav&gt;
+    &lt;div class="season"&gt;43°35′ с. ш. &amp;nbsp;·&amp;nbsp; 39°43′ в. д.&lt;/div&gt;
+  &lt;/header&gt;
+
+  &lt;main id="top"&gt;
+    &lt;section class="wrap hero"&gt;
+      &lt;div class="eyebrow"&gt;Путевой журнал · Черноморское побережье&lt;/div&gt;
+      &lt;div class="hero-grid"&gt;
+        &lt;div&gt;
+          &lt;h1&gt;город&lt;br&gt;&lt;span&gt;у моря&lt;/span&gt;&lt;/h1&gt;
+          &lt;p class="hero-copy"&gt;Сочи умеет соединять то, что обычно живёт порознь: солёный воздух, пальмы, старые санатории и снежные вершины — всё в одном длинном южном дне.&lt;/p&gt;
+          &lt;a class="hero-link" href="#about"&gt;Начать прогулку &lt;i&gt;↓&lt;/i&gt;&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;figure class="hero-photo"&gt;
+          &lt;img src="https://opis-cdn.tinkoffjournal.ru/mercury/30-dostoprimechatelnosti-sochi.jpg" alt="Побережье Сочи и набережная у Чёрного моря" fetchpriority="high"&gt;
+          &lt;figcaption class="photo-label"&gt;&lt;span&gt;01 / 04&lt;/span&gt; Город встречает море&lt;/figcaption&gt;
+        &lt;/figure&gt;
+      &lt;/div&gt;
+      &lt;div class="hero-index"&gt;ЛИСТАЙТЕ ВНИЗ — МАРШРУТ НАЧИНАЕТСЯ&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="wrap intro" id="about"&gt;
+      &lt;div class="intro-tag"&gt;Сначала — берег&lt;/div&gt;
+      &lt;p&gt;Здесь горизонт пахнет морем, а за линией крыш уже поднимается Кавказ.&lt;/p&gt;
+      &lt;div class="intro-side"&gt;Юг России&lt;br&gt;Курорт круглый год&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="wrap section"&gt;
+      &lt;div class="section-head"&gt;&lt;div&gt;&lt;div class="eyebrow"&gt;01 · Ритм города&lt;/div&gt;&lt;h2&gt;Медленно к морю&lt;/h2&gt;&lt;/div&gt;&lt;p&gt;Начните с центра: здесь лучше всего чувствуется старый курортный Сочи.&lt;/p&gt;&lt;/div&gt;
+      &lt;div class="story-grid"&gt;
+        &lt;figure class="story-main"&gt;
+          &lt;img src="https://wikiway.com/upload/uf/b26/bpfmckmzt026cfa0ckcz2bfsldyofe7k/TSentralnaya-naberezhnaya-Sochi-1.jpg" alt="Центральная набережная Сочи, пальмы и Чёрное море" loading="lazy"&gt;
+          &lt;figcaption class="image-caption"&gt;&lt;span&gt;Центральная набережная&lt;/span&gt;&lt;span&gt;Утро · 09:20&lt;/span&gt;&lt;/figcaption&gt;
+        &lt;/figure&gt;
+        &lt;article class="story-aside"&gt;
+          &lt;img src="https://foto.papik.pro/uploads/posts/2025-05/29/17485459106308.jpg" alt="Приморская набережная с пальмами и видом на Чёрное море" loading="lazy"&gt;
+          &lt;div class="number"&gt;МАРШРУТ 01 — 2,4 КМ&lt;/div&gt;
+          &lt;h3&gt;Пальмы, свет и немного тени&lt;/h3&gt;
+          &lt;p&gt;Пройдитесь по набережной без цели. Сверните в парк, возьмите кофе и задержитесь у воды — в Сочи такие паузы становятся частью маршрута.&lt;/p&gt;
+        &lt;/article&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="route" id="route"&gt;
+      &lt;div class="wrap"&gt;
+        &lt;div class="route-head"&gt;&lt;div&gt;&lt;div class="eyebrow"&gt;02 · Южный экспресс&lt;/div&gt;&lt;h2&gt;Три остановки,&lt;br&gt;один большой день&lt;/h2&gt;&lt;/div&gt;&lt;p class="route-lead"&gt;От солёного воздуха к прохладным горным вечерам. Путь, который раскрывает характер города.&lt;/p&gt;&lt;/div&gt;
+        &lt;div class="stops"&gt;
+          &lt;article class="stop"&gt;&lt;small&gt;Остановка первая&lt;/small&gt;&lt;h3&gt;Морской вокзал&lt;/h3&gt;&lt;p&gt;Белая башня, яхты и неспешное утро на центральном причале.&lt;/p&gt;&lt;span class="time"&gt;09:00 &amp;nbsp;—&amp;nbsp; 11:00&lt;/span&gt;&lt;/article&gt;
+          &lt;article class="stop"&gt;&lt;small&gt;Остановка вторая&lt;/small&gt;&lt;h3&gt;Дендрарий&lt;/h3&gt;&lt;p&gt;Тропинки в тени старых деревьев и вид на побережье с высоты.&lt;/p&gt;&lt;span class="time"&gt;12:00 &amp;nbsp;—&amp;nbsp; 15:00&lt;/span&gt;&lt;/article&gt;
+          &lt;article class="stop"&gt;&lt;small&gt;Остановка третья&lt;/small&gt;&lt;h3&gt;Красная Поляна&lt;/h3&gt;&lt;p&gt;К вечеру — вверх, к горному воздуху, лесу и дальним хребтам.&lt;/p&gt;&lt;span class="time"&gt;16:30 &amp;nbsp;—&amp;nbsp; 20:00&lt;/span&gt;&lt;/article&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="wrap details" id="season"&gt;
+      &lt;img src="https://s3.rosakhutor.ru/upload/iblock/714/butd9sw6n7i0z4k4vzrzogidmcca1irm/RosaWalk220522_by_asyart_555_result.webp" alt="Горные вершины Кавказа у Роза Хутор" loading="lazy"&gt;
+      &lt;div class="details-copy"&gt;&lt;div class="eyebrow"&gt;03 · Выше облаков&lt;/div&gt;&lt;h2&gt;В горах —&lt;br&gt;другой Сочи&lt;/h2&gt;&lt;p&gt;Стоит отъехать от побережья, и город меняет темп. В Красной Поляне воздух становится прохладнее, склоны ближе, а горизонт — шире. Оставьте на эту часть поездки целый день.&lt;/p&gt;&lt;p&gt;Зимой здесь горнолыжный сезон, летом — прогулки по высокогорным тропам и долгие виды на Кавказский хребет.&lt;/p&gt;&lt;div class="fact-row"&gt;&lt;div class="fact"&gt;&lt;strong&gt;2 320 м&lt;/strong&gt;&lt;span&gt;Роза Пик&lt;/span&gt;&lt;/div&gt;&lt;div class="fact"&gt;&lt;strong&gt;1 час&lt;/strong&gt;&lt;span&gt;От побережья&lt;/span&gt;&lt;/div&gt;&lt;div class="fact"&gt;&lt;strong&gt;4 сезона&lt;/strong&gt;&lt;span&gt;Один курорт&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="wrap closing"&gt;&lt;div class="closing-row"&gt;&lt;h2&gt;Оставайтесь&lt;br&gt;&lt;em&gt;ещё на день.&lt;/em&gt;&lt;/h2&gt;&lt;p class="closing-note"&gt;Сочи не заканчивается у моря. Иногда лучшее начинается там, где дорога поворачивает в горы.&lt;/p&gt;&lt;/div&gt;&lt;footer&gt;&lt;span&gt;Южная линия · Сочи&lt;/span&gt;&lt;span&gt;Путевой журнал · 2026&lt;/span&gt;&lt;span&gt;43°35′ с. ш. · 39°43′ в. д.&lt;/span&gt;&lt;/footer&gt;&lt;/section&gt;
+  &lt;/main&gt;
+
+  &lt;div class="rail" aria-hidden="true"&gt;&lt;div class="ties"&gt;&lt;i&gt;&lt;/i&gt;&lt;i&gt;&lt;/i&gt;&lt;i&gt;&lt;/i&gt;&lt;i&gt;&lt;/i&gt;&lt;i&gt;&lt;/i&gt;&lt;i&gt;&lt;/i&gt;&lt;i&gt;&lt;/i&gt;&lt;i&gt;&lt;/i&gt;&lt;i&gt;&lt;/i&gt;&lt;i&gt;&lt;/i&gt;&lt;i&gt;&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class="train" id="train" aria-hidden="true"&gt;
+    &lt;svg viewBox="0 0 48 82" xmlns="http://www.w3.org/2000/svg"&gt;
+      &lt;rect x="7" y="5" width="34" height="66" rx="11" fill="#c6382d"/&gt;
+      &lt;path d="M12 16c0-3.3 2.7-6 6-6h12c3.3 0 6 2.7 6 6v17H12V16Z" fill="#f2ede5"/&gt;
+      &lt;path d="M15 16c0-1.7 1.3-3 3-3h12c1.7 0 3 1.3 3 3v10H15V16Z" fill="#b9d2d3"/&gt;
+      &lt;path d="M24 13v13" stroke="#f7f5f0" stroke-width="2"/&gt;
+      &lt;path d="M11 38h26M14 43h20" stroke="#efb4a9" stroke-width="2" stroke-linecap="round"/&gt;
+      &lt;rect x="14" y="51" width="20" height="8" rx="2" fill="#8f2923"/&gt;
+      &lt;path d="m15 71-3 6m21-6 3 6" stroke="#55514c" stroke-width="3" stroke-linecap="round"/&gt;
+      &lt;circle cx="8" cy="20" r="2" fill="#f8dfb6"/&gt;&lt;circle cx="40" cy="20" r="2" fill="#f8dfb6"/&gt;
+    &lt;/svg&gt;
+  &lt;/div&gt;
+  &lt;script&gt;
+    (() =&gt; {
+      const train = document.getElementById('train');
+      let scheduled = false;
+      const moveTrain = () =&gt; {
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = maxScroll &gt; 0 ? Math.min(1, Math.max(0, window.scrollY / maxScroll)) : 0;
+        const start = window.innerHeight * 0.1;
+        const end = Math.max(start, window.innerHeight * 0.9 - train.offsetHeight);
+        train.style.top = `${start + progress * (end - start)}px`;
+        scheduled = false;
+      };
+      const onScroll = () =&gt; { if (!scheduled) { requestAnimationFrame(moveTrain); scheduled = true; } };
+      window.addEventListener('scroll', onScroll, { passive:true });
+      window.addEventListener('resize', onScroll);
+      moveTrain();
+    })();
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
